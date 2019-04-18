@@ -1,9 +1,7 @@
 #!/bin/sh
 
-set -e
-
 echo "$(date) - Start"
 
-curl $OPTIONS
+timeout -t ${TIMEOUT:-110} curl $OPTIONS > /dev/null
 
 echo "$(date) End"

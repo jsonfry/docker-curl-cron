@@ -1,14 +1,14 @@
-[![](https://images.microbadger.com/badges/image/jsonfry/curl-cron.svg)](https://microbadger.com/images/jsonfry/s3-sync "Get your own image badge on microbadger.com")
-[![](https://images.microbadger.com/badges/version/jsonfry/curl-cron.svg)](https://microbadger.com/images/jsonfry/s3-sync "Get your own version badge on microbadger.com")
 
 
-# jsonfry/curl-cron
+# keydonix/curl-cron
+
+Forked from: [jsonfry/curl-cron](https://github.com/jsonfry/docker-curl-cron)
 
 Docker image that runs periodically runs a curl command
 
 ## Usage
 
-    docker run -d [OPTIONS] jsonfry/curl-cron
+    docker run -d [OPTIONS] keydonix/curl-cron
 
 
 ### Required Parameters:
@@ -29,11 +29,11 @@ Run every hour with cron schedule (container keeps running):
         -e OPTIONS=example.com \
         -e CRON_SCHEDULE="0 1 * * *" \
         -e TIMEOUT=9 \
-        jsonfry/curl-cron
+        keydonix/curl-cron
 
 Run just once (container is deleted afterwards):
 
     docker run --rm \
         -e OPTIONS=example.com \
-        jsonfry/curl-cron now
+        keydonix/curl-cron now
 

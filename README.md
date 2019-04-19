@@ -13,7 +13,7 @@ Docker image that runs periodically runs a curl command
 
 ### Required Parameters:
 
-* `-e OPTIONS=<OPTIONS>`: curl command options
+* `-e IPFS_HASHES="hash1 hash2"`: List of ipfs hashes
 * `-e CRON_SCHEDULE="0 1 * * *"`: specifies when cron job starts ([details](http://en.wikipedia.org/wiki/Cron)), e.g. `0 1 * * *` (runs every night at 1:00).
 * `-e TIMEOUT=<NUMBER>`: Timeout in seconds for curl command (default 110)
 
@@ -26,7 +26,7 @@ Docker image that runs periodically runs a curl command
 Run every hour with cron schedule (container keeps running):
 
     docker run -d \
-        -e OPTIONS=example.com \
+        -e IPFS_HASHES="hash1 hash2" \
         -e CRON_SCHEDULE="0 1 * * *" \
         -e TIMEOUT=9 \
         keydonix/curl-cron
@@ -34,6 +34,6 @@ Run every hour with cron schedule (container keeps running):
 Run just once (container is deleted afterwards):
 
     docker run --rm \
-        -e OPTIONS=example.com \
+        -e IPFS_HASHES="QmRAQB6YaCyidP37UdDnjFY5vQuiBrcqdyoW1CuDgwxkD4" \
         keydonix/curl-cron now
 
